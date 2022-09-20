@@ -1,0 +1,31 @@
+ @foreach ($data as $item)
+                                                <tr>
+                                                    <th class="text-center">
+                                                        {{ $item->student_id }}
+                                                    </th>
+                                                    <th>{{ $item->student_name }}</th>
+                                                    <th>{{ $item->parent_name }}</th>
+                                                    <th>{{ $item->program_name }}</th>
+                                                    <th>{{ $item->class_name }}</th>
+                                                    <th>{{ $item->section_name }}</th>
+                                                    <th>{{ $item->roll_no }}</th>
+                                                    <th>{{ $item->dateofbirth }}</th>
+                                                    <th>{{ $item->dateofadmission }}</th>
+                                                    <th>{{ $item->tuition_fee }}</th>
+                                                    <th>{{ $item->stationary_fee }}</th>
+                                                    <th>{{ $item->admission_fee }}</th>
+                                                    <th>{{ $item->anual_fee }}</th>
+                                                    <th>{{ $item->fine }}</th>
+
+                                                    <td><span
+                                                            class="badge badge-pill <?php if ($item->Status == 'Active') {
+    echo ' badge-success ';
+} else {
+    echo ' badge-danger ';
+} ?> ">{{ $item->Status }}</span>
+                                                    </td>
+                                                    <th class="btn btn-primary mt-2 update" id="{{ $item->student_id }}"
+                                                        data-toggle="modal" data-target="#myModal" data-backdrop="static"
+                                                        data-keyboard="false"> Update</th>
+                                                </tr>
+                                            @endforeach
